@@ -57,7 +57,6 @@ import { getAllBooks } from "./lib/microcms/client";
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Home() {
   const { contents } = await getAllBooks();
-  console.log(contents);
 
   return (
     <>

@@ -16,7 +16,7 @@ const DetailBook = async ({params}: {params: {id: string}}) => {
           height={700}
         />
         <div className="p-4">
-          <h2 className="text-2xl font-bold">book.title</h2>
+          <h2 className="text-2xl font-bold">{book.title}</h2>
           <div
             className="text-gray-700 mt-2"
             dangerouslySetInnerHTML={{ __html: book.content }}

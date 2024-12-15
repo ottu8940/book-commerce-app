@@ -8,9 +8,10 @@ import { useRouter } from "next/navigation";
 
 type BookProps = {
   book: BookType;
+  isPurchased: boolean;
 }
 // eslint-disable-next-line react/display-name
-const Book = ({ book }: BookProps) => {
+const Book = ({ book, isPurchased }: BookProps) => {
 
   const [showModal, setShowModal] = useState(false);
   const {data: session} = useSession();
@@ -41,7 +42,11 @@ const Book = ({ book }: BookProps) => {
     setShowModal(false);
   }
   const handlePurchaseClick = () => {
-    setShowModal(true);
+    if(isPurchased) {
+      alert("すでに購入済みです");
+    } else {
+      setShowModal(true);
+    }
   }
   const handlePurchaseConfirm = () => {
     if(!user){
